@@ -1,0 +1,18 @@
+<resources>
+
+    <!--
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- API 11 theme customizations can go here. -->
+    </style>
+
+    <style name="ChoGazoViewerDarkActionBar" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarItemBackground">@drawable/abc_ab_solid_dark_holo</item>
+        <item name="android:alertDialogTheme">@style/BlackAlertDialog</item>
+        <item name="android:checkboxStyle">@style/ChoGazoViewerCheckBox</item>
+    </style>
+    <style name="ChoGazoViewerThemeNoTitleBar" parent="android:Theme.Holo.NoActionBar">
+    </style>
+</resources>

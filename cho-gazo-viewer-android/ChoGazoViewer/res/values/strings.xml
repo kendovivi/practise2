@@ -1,0 +1,100 @@
+<resources>
+
+    <string name="app_name">ChoGazoViewer</string>
+    <string name="viewer_not_image">not image</string>
+
+    <string name="viewer_dlg_err_title">エラー</string>
+    <string name="viewer_dlg_btn_positive">OK</string>
+    <string name="viewer_dlg_btn_negative">キャンセル</string>
+    <string name="viewer_dlg_err_mes_memory">メモリが不足しています。（%d）\n起動中の他のアプリを終了したうえ、本アプリを再起動してお試しください。</string>
+    <string name="viewer_dlg_err_mes_contents">コンテンツを開くことができません。（%d）</string>
+    <string name="viewer_dlg_err_mes_unexpected">エラーが発生しました。（%d）</string>
+    <string name="viewer_dlg_add_bookmark_text">このページにしおりをつけますか？</string>
+
+    <string name="viewer_nav_head_text">目次</string>
+    <string name="viewer_bookmark_head_text">しおり</string>
+    <string name="viewer_bookmark_add_text">しおりを付ける</string>
+    <string name="viewer_bookmark_row_edit_text">編集</string>
+    <string name="viewer_bookmark_edit_dialog_title">ラベル編集</string>
+    <string name="viewer_bookmark_edit_dialog_ok">OK</string>
+    <string name="viewer_bookmark_edit_dialog_delete">削除</string>
+    <string name="viewer_brightness_dialog_title">画面の明るさ</string>
+
+    <string name="brightness_checkbox_text">端末の設定に従う</string>
+    <string name="brightness_minus">－</string>
+    <string name="brightness_plus">＋</string>
+
+    <string name="pref_viewer_title">ビューア設定</string>
+    <string name="pref_subtitle_auto_play">自動再生</string>
+    <string name="pref_subtitle_file_info">ファイル情報</string>
+    <string name="pref_file_info_title">表示タイトル</string>
+    <string name="pref_file_info_title_kana">表示タイトル（かな）</string>
+    <string name="pref_file_info_author">作家名</string>
+    <string name="pref_file_info_author_kana">作家名（かな）</string>
+    <string name="pref_file_info_filename">ファイル名</string>
+    <string name="pre_key_viewer_orientation">pre_key_viewer_orientation</string>
+    <string name="pre_key_viewer_spread">pre_key_viewer_spread</string>
+    <string name="pre_key_viewer_tap_action">pre_key_viewer_tap_action</string>
+    <string name="pre_key_viewer_animation">pre_key_viewer_animation</string>
+    <string name="pre_key_viewer_auto_play_interval">pre_key_viewer_auto_play_interval</string>
+    <string name="pre_key_viewer_loop_play">pre_key_viewer_loop_play</string>
+    <string name="pre_key_viewer_auto_play_direction">pre_key_viewer_auto_play_direction</string>
+    <string name="pre_key_viewer_brightness">pre_key_viewer_brightness</string>
+    <string name="pre_title_viewer_orientation">画面の回転</string>
+    <string name="pre_title_viewer_spread">横画面の見開き表示</string>
+    <string name="pre_title_viewer_tap_action">左右エリアのタップ</string>
+    <string name="pre_title_viewer_animation">ページめくりアニメーション</string>
+    <string name="pre_title_viewer_auto_play_interval">間隔</string>
+    <string name="pre_title_viewer_loop_play">ループ</string>
+    <string name="pre_title_viewer_auto_play_direction">方向</string>
+    <string-array name="pre_entrys_viewer_orientation">
+        <item>端末の設定に従う</item>
+        <item>縦画面固定</item>
+        <item>横画面固定</item>
+    </string-array>
+    <string-array name="pre_entrys_viewer_tap_action">
+        <item>前ページ/次ページへ</item>
+        <item>常に次ページへ</item>
+        <item>ページめくりなし</item>
+    </string-array>
+    <string-array name="pre_entrys_viewer_animation">
+        <item>スライド</item>
+        <item>なし</item>
+    </string-array>
+    <string-array name="pre_entrys_viewer_auto_play_direction">
+        <item>順方向</item>
+        <item>逆方向</item>
+        <item>ランダム</item>
+    </string-array>
+    <string-array name="pre_entryValues_viewer_orientation">
+        <item>SCREEN_ORIENTATION_SENSOR</item>
+        <item>SCREEN_ORIENTATION_PORTRAIT</item>
+        <item>SCREEN_ORIENTATION_LANDSCAPE</item>
+    </string-array>
+    <string-array name="pre_entryValues_viewer_tap_action">
+        <item>NORMAL</item>
+        <item>NEXT</item>
+        <item>NONE</item>
+    </string-array>
+    <string-array name="pre_entryValues_viewer_animation">
+        <item>SLIDE</item>
+        <item>NONE</item>
+    </string-array>
+    <string-array name="pre_entryValues_viewer_auto_play_direction">
+        <item>FORWARD</item>
+        <item>REVERSE</item>
+        <item>RANDOM</item>
+    </string-array>
+    <string name="pre_default_viewer_orientation">SCREEN_ORIENTATION_SENSOR</string>
+    <bool name="pre_default_viewer_spread">true</bool>
+    <string name="pre_default_viewer_tap_action">NORMAL</string>
+    <string name="pre_default_viewer_animation">SLIDE</string>
+    <integer name="pre_default_viewer_auto_play_interval">5</integer>
+    <bool name="pre_default_viewer_loop_play">false</bool>
+    <string name="pre_default_viewer_auto_play_direction">FORWARD</string>
+    <integer name="pre_default_viewer_brightness">-100</integer>
+    <string name="pre_summary_on_viewer_spread">有効</string>
+    <string name="pre_summary_off_viewer_spread">無効</string>
+    <string name="pre_summary_on_viewer_loop_play">有効</string>
+    <string name="pre_summary_off_viewer_loop_play">無効</string>
+</resources>

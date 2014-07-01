@@ -1,0 +1,28 @@
+<jp.bpsinc.android.trainingbookshelf.view.ShelfDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/shelf_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/drawer_listview"
+        android:layout_width="280dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        android:divider="@null"
+        android:choiceMode="singleChoice" />
+
+</jp.bpsinc.android.trainingbookshelf.view.ShelfDrawerLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:chogazo="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/cho_gazo_viewer_menu_add_bookmark"
+        android:icon="@drawable/cho_gazo_viewer_btn_footer_add_bookmark"
+        android:title="@string/viewer_bookmark_add_text"
+        chogazo:showAsAction="always" />
+
+</menu>

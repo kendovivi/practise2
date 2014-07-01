@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">Training Bookshelf</string>
+
+    <!-- 本棚ActionBar -->
+    <string name="action_search">検索</string>
+    <string name="action_edit">編集</string>
+
+    <!-- 本棚ドロワー　アイテムリスト -->
+    <string-array name="drawer_items">
+        <item>ログイン</item>
+        <item>BPSショップ</item>
+        <item>separator</item>
+        <item>表示切替</item>
+        <item>設定</item>
+        <item>separator</item>
+        <item>メイン本棚</item>
+        <item>最近読んだ本</item>
+        <item>ユーザー本棚1</item>
+        <item>ユーザー本棚2</item>
+        <item>ユーザー本棚3</item>
+        <item>ユーザー本棚4</item>
+        <item>ユーザー本棚5</item>
+        <item>ユーザー本棚6</item>
+        <item>ユーザー本棚7</item>
+        <item>ユーザー本棚8</item>
+        <item>ユーザー本棚9</item>
+        <item>ユーザー本棚10</item>
+    </string-array>
+
+    <!-- 本棚ドロワー　ラベル名称 -->
+    <string name="drawer_separator_setting_text">設定</string>
+    <string name="drawer_separator_hondana_text">本棚</string>
+    <string name="drawer_open">draweropen</string>
+    <string name="drawer_close">drawerclose</string>
+
+    <!-- 空listview -->
+    <string name="empty_content_warning">コンテンツが見つからない。外部ストレージにいれてから使ってください！</string>
+
+    <!-- EPUB DIALOG -->
+    <string name="loading_epub">コンテンツ読み込み中</string>
+    <string name="load_epub_default_text">読み込み開始</string>
+
+</resources>

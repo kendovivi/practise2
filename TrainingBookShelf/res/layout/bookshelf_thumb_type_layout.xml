@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bookshelf_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- cacheColorHintについて、これを参考する
+    　　　　　　 http://www.curious-creature.org/2008/12/22/why-is-my-list-black-an-android-optimization/ -->
+    <jp.bpsinc.android.trainingbookshelf.view.BookGridView
+        android:id="@+id/bookshelf_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        android:cacheColorHint="#00000000"
+        android:numColumns="auto_fit"
+        android:columnWidth="85dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:horizontalSpacing="10dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:stretchMode="spacingWidth"
+        android:fadingEdge="none" />
+
+</RelativeLayout>

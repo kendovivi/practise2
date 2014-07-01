@@ -1,0 +1,36 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- customize theme -->
+    <style name="MyActionBarTheme" parent="@style/Theme.AppCompat.Light">
+        <!-- 2系 -->
+        <item name="actionBarStyle">@style/MyActionBarStyle</item>
+        <!-- 4系 -->
+        <item name="android:actionBarStyle" tools:ignore="NewApi">@style/MyActionBarStyle</item>
+    </style>
+
+    <style name="MyActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
+
+        <!-- 2系 set actionbar background to grey, so the bottom border will no longer be visible -->
+        <item name="background">@color/white</item>
+        <!-- 4系 -->
+        <item name="android:background">@color/white</item>
+    </style>
+
+</resources>

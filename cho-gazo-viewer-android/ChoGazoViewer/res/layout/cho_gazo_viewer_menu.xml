@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewer_menu_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- フッタ -->
+    <LinearLayout
+        android:id="@+id/viewer_footer_menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical" >
+
+        <!-- ページシークバー -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+            android:background="@color/viewer_menu_bg_color" >
+            <SeekBar
+                android:id="@+id/viewer_footer_seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="25dp"
+                android:layout_weight="1"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:minHeight="13dp"
+                android:maxHeight="13dp"
+                android:thumbOffset="9.5dp"
+                android:thumb="@drawable/cho_gazo_viewer_seek_thumb" />
+            <TextView
+                android:id="@+id/viewer_footer_seek_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:text=""
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <!-- 各種機能ボタン -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:orientation="horizontal"
+            android:background="@color/viewer_menu_bg_color" >
+            <!-- 自動再生ボタン -->
+            <ImageButton
+                android:id="@+id/viewer_footer_auto_play_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/viewer_not_image"
+                android:background="@drawable/cho_gazo_viewer_btn_footer_auto_play" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+            <!-- 画面の明るさ設定ボタン -->
+            <ImageButton
+                android:id="@+id/viewer_footer_brightness_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/viewer_not_image"
+                android:background="@drawable/cho_gazo_viewer_btn_footer_brightness" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+            <!-- 目次ボタン -->
+            <ImageButton
+                android:id="@+id/viewer_footer_nav_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/viewer_not_image"
+                android:background="@drawable/cho_gazo_viewer_btn_footer_nav" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+            <!-- しおりボタン -->
+            <ImageButton
+                android:id="@+id/viewer_footer_bookmark_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/viewer_not_image"
+                android:background="@drawable/cho_gazo_viewer_btn_footer_bookmark" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+            <!-- 設定ボタン -->
+            <ImageButton
+                android:id="@+id/viewer_footer_setting_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/viewer_not_image"
+                android:background="@drawable/cho_gazo_viewer_btn_footer_setting" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

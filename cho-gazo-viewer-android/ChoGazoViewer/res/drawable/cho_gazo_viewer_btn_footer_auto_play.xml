@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/cho_gazo_viewer_btn_footer_auto_play_pressed" />
+    <item
+        android:drawable="@drawable/cho_gazo_viewer_btn_footer_auto_play_default" />
+
+</selector>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- ビューア設定 -->
+    <ListPreference
+        android:key="@string/pre_key_viewer_orientation"
+        android:title="@string/pre_title_viewer_orientation"
+        android:defaultValue="@string/pre_default_viewer_orientation"
+        android:entries="@array/pre_entrys_viewer_orientation"
+        android:entryValues="@array/pre_entryValues_viewer_orientation" />
+    <ListPreference
+        android:key="@string/pre_key_viewer_tap_action"
+        android:title="@string/pre_title_viewer_tap_action"
+        android:defaultValue="@string/pre_default_viewer_tap_action"
+        android:entries="@array/pre_entrys_viewer_tap_action"
+        android:entryValues="@array/pre_entryValues_viewer_tap_action" />
+    <ListPreference
+        android:key="@string/pre_key_viewer_animation"
+        android:title="@string/pre_title_viewer_animation"
+        android:defaultValue="@string/pre_default_viewer_animation"
+        android:entries="@array/pre_entrys_viewer_animation"
+        android:entryValues="@array/pre_entryValues_viewer_animation" />
+    <!-- 自動再生設定 -->
+    <PreferenceCategory
+        android:layout="@layout/cho_gazo_viewer_pref_subtitle_auto_play" >
+        <jp.bpsinc.android.chogazo.viewer.preference.AutoPlayIntervalPreference
+            android:key="@string/pre_key_viewer_auto_play_interval"
+            android:title="@string/pre_title_viewer_auto_play_interval"
+            android:defaultValue="@integer/pre_default_viewer_auto_play_interval" />
+        <CheckBoxPreference
+            android:key="@string/pre_key_viewer_loop_play"
+            android:title="@string/pre_title_viewer_loop_play"
+            android:defaultValue="@bool/pre_default_viewer_loop_play"
+            android:summaryOn="@string/pre_summary_on_viewer_loop_play"
+            android:summaryOff="@string/pre_summary_off_viewer_loop_play" />
+        <ListPreference
+            android:key="@string/pre_key_viewer_auto_play_direction"
+            android:title="@string/pre_title_viewer_auto_play_direction"
+            android:defaultValue="@string/pre_default_viewer_auto_play_direction"
+            android:entries="@array/pre_entrys_viewer_auto_play_direction"
+            android:entryValues="@array/pre_entryValues_viewer_auto_play_direction" />
+    </PreferenceCategory>
+    <!-- ファイル情報表示 -->
+    <PreferenceCategory
+        android:key="@string/pref_subtitle_file_info"
+        android:layout="@layout/cho_gazo_viewer_pref_subtitle_file_info" >
+        <Preference
+            android:key="@string/pref_file_info_title"
+            android:title="@string/pref_file_info_title" />
+        <Preference
+            android:key="@string/pref_file_info_title_kana"
+            android:title="@string/pref_file_info_title_kana" />
+        <Preference
+            android:key="@string/pref_file_info_author"
+            android:title="@string/pref_file_info_author" />
+        <Preference
+            android:key="@string/pref_file_info_author_kana"
+            android:title="@string/pref_file_info_author_kana" />
+        <Preference
+            android:key="@string/pref_file_info_filename"
+            android:title="@string/pref_file_info_filename" />
+    </PreferenceCategory>
+</PreferenceScreen>
