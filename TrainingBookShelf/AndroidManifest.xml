@@ -15,14 +15,18 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="jp.bpsinc.android.trainingbookshelf.activity.BookShelfMainActivity"
+            android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/MyActionBarTheme"
-            android:configChanges="orientation|screenSize" >
+            android:theme="@style/MyActionBarTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="jp.bpsinc.android.chogazo.viewer.activity.FxlViewerActivity"
+            android:theme="@style/MyActionBarTheme" >
         </activity>
     </application>
 

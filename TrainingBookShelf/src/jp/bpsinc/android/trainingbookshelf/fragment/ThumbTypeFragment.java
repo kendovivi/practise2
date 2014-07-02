@@ -1,6 +1,18 @@
 
 package jp.bpsinc.android.trainingbookshelf.fragment;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import jp.bpsinc.android.chogazo.viewer.activity.ViewerActivity;
+import jp.bpsinc.android.chogazo.viewer.content.ViewerContents;
+import jp.bpsinc.android.chogazo.viewer.content.epub.EpubFile;
+import jp.bpsinc.android.chogazo.viewer.content.epub.EpubReader;
+import jp.bpsinc.android.trainingbookshelf.activity.BookShelfMainActivity;
+import jp.bpsinc.android.trainingbookshelf.adapter.ThumbTypeRowAdapter;
+import jp.bpsinc.android.trainingbookshelf.content.ContentInfo;
+import jp.bpsinc.android.trainingbookshelf.preferences.ShelfPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,12 +21,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
+
 import com.bps.trainingbookshelf.R;
-import java.util.ArrayList;
-import jp.bpsinc.android.trainingbookshelf.activity.BookShelfMainActivity;
-import jp.bpsinc.android.trainingbookshelf.adapter.ThumbTypeRowAdapter;
-import jp.bpsinc.android.trainingbookshelf.content.ContentInfo;
-import jp.bpsinc.android.trainingbookshelf.preferences.ShelfPreferences;
 
 public class ThumbTypeFragment extends Fragment {
     private BookShelfMainActivity mActivity;
@@ -63,8 +71,17 @@ public class ThumbTypeFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                // Toast.makeText(mActivity, "-->> position = " + position,
-                // Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mActivity,
+                        jp.bpsinc.android.chogazo.viewer.activity.FxlViewerActivity.class);
+
+                ViewerContents viewerContents = new ViewerContents();
+                viewerContents.setContentsKey(String.valueOf(position));
+                viewerContents.setPath(mContentList.get(position).getEpubPath());
+                viewerContents.setReaderClassName(EpubReader.class.getName());
+                viewerContents.setBookClassName(EpubFile.class.getName());
+
+                intent.putExtra(ViewerActivity.INTENT_KEY_CONTENTS, (Serializable) viewerContents);
+                mActivity.startActivity(intent);
             }
         };
         return listener;
