@@ -10,12 +10,18 @@ public class ContentInfo {
     private String mAuthor;
     /** コンテンツEPUBファイルパス */
     private String mEpubPath;
+    /** コンテンツタイプ */
+    private int mType;
 
-    public ContentInfo(String uid, String title, String author, String epubPath) {
+    public static final int CONTENT_TYPE_EPUB = -1;
+    public static final int CONTENT_TYPE_ZIP = -2;
+
+    public ContentInfo(String uid, String title, String author, String epubPath, int type) {
         this.mUid = uid;
         this.mTitle = title;
         this.mAuthor = author;
         this.setmEpubPath(epubPath);
+        this.mType = type;
     };
 
     public String getContentTitle() {
@@ -48,6 +54,14 @@ public class ContentInfo {
 
     public void setmEpubPath(String epubPath) {
         this.mEpubPath = epubPath;
+    }
+
+    public int getType() {
+        return mType;
+    }
+
+    public void setType(int type) {
+        this.mType = type;
     }
 
 }

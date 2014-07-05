@@ -1,11 +1,12 @@
 
 package jp.bpsinc.android.trainingbookshelf.content;
 
+import java.io.File;
+import java.io.FilenameFilter;
+
 import android.app.Activity;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
-import java.io.File;
-import java.io.FilenameFilter;
 
 public class ContentManager {
 
@@ -14,6 +15,10 @@ public class ContentManager {
 
     /** 外部ストレージにあるEPUBファイル名リスト */
     private String[] mEpubFileNameList;
+    /** EPUB拡張子 */
+    public static String EXTENSION_EPUB = ".epub";
+    /** ZIP拡張子 */
+    public static String EXTENSION_ZIP = ".zip";
 
     /**
      * バックグランドEPUB読み込みスレッドを起動する
@@ -33,10 +38,22 @@ public class ContentManager {
 
             @Override
             public boolean accept(File dir, String filename) {
-                return (filename != null && filename.endsWith(".epub"));
+                return (filename != null && filename.endsWith(EXTENSION_EPUB));
             }
         });
         return epubFileNameList;
+    }
+
+    // TODO
+    public static String[] getZipFileName(File fileDir) {
+        String[] zipFileNameList = fileDir.list(new FilenameFilter() {
+
+            @Override
+            public boolean accept(File dir, String filename) {
+                return (filename != null && filename.endsWith(EXTENSION_ZIP));
+            }
+        });
+        return zipFileNameList;
     }
 
     /**
@@ -51,6 +68,14 @@ public class ContentManager {
         } else {
             return epubFileNameList.length;
         }
+    }
+
+    public static int getZipFileCount(File fileDir) {
+        String[] zipFileNameList = getZipFileName(fileDir);
+        if (zipFileNameList != null) {
+            return zipFileNameList.length;
+        }
+        return 0;
     }
 
     /**

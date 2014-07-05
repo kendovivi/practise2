@@ -8,6 +8,8 @@ import jp.bpsinc.android.chogazo.viewer.activity.ViewerActivity;
 import jp.bpsinc.android.chogazo.viewer.content.ViewerContents;
 import jp.bpsinc.android.chogazo.viewer.content.epub.EpubFile;
 import jp.bpsinc.android.chogazo.viewer.content.epub.EpubReader;
+import jp.bpsinc.android.chogazo.viewer.content.zip.ZipBookFile;
+import jp.bpsinc.android.chogazo.viewer.content.zip.ZipReader;
 import jp.bpsinc.android.trainingbookshelf.activity.BookShelfMainActivity;
 import jp.bpsinc.android.trainingbookshelf.adapter.ListTypeRowAdapter;
 import jp.bpsinc.android.trainingbookshelf.content.ContentInfo;
@@ -83,8 +85,21 @@ public class ListTypeFragment extends Fragment {
                 ViewerContents viewerContents = new ViewerContents();
                 viewerContents.setContentsKey(String.valueOf(position));
                 viewerContents.setPath(mContentList.get(position).getEpubPath());
-                viewerContents.setReaderClassName(EpubReader.class.getName());
-                viewerContents.setBookClassName(EpubFile.class.getName());
+
+                String readerClassName = null;
+                String bookClassName = null;
+                switch (mContentList.get(position).getType()) {
+                    case ContentInfo.CONTENT_TYPE_EPUB:
+                        readerClassName = EpubReader.class.getName();
+                        bookClassName = EpubFile.class.getName();
+                        break;
+                    case ContentInfo.CONTENT_TYPE_ZIP:
+                        readerClassName = ZipReader.class.getName();
+                        bookClassName = ZipBookFile.class.getName();
+                        break;
+                }
+                viewerContents.setReaderClassName(readerClassName);
+                viewerContents.setBookClassName(bookClassName);
 
                 intent.putExtra(ViewerActivity.INTENT_KEY_CONTENTS, (Serializable) viewerContents);
                 mActivity.startActivity(intent);
