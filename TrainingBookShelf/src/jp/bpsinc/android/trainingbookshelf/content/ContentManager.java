@@ -9,73 +9,60 @@ import android.os.Environment;
 import android.support.v4.app.Fragment;
 
 public class ContentManager {
+    /** 外部ストレージにあるEPUBファイル名リスト */
+    private String[] mEpubFileNameList;
 
     /** 外部ストレージパス */
     public static final File EXTERNAL_STORAGE_DIRECTORY = Environment.getExternalStorageDirectory();
-
-    /** 外部ストレージにあるEPUBファイル名リスト */
-    private String[] mEpubFileNameList;
     /** EPUB拡張子 */
     public static String EXTENSION_EPUB = ".epub";
     /** ZIP拡張子 */
     public static String EXTENSION_ZIP = ".zip";
+    /** 対応するコンテンツの拡張子配列 */
+    public static String[] EXTENSION_ACCEPTABLE = {
+            EXTENSION_EPUB, EXTENSION_ZIP
+    };
 
     /**
-     * バックグランドEPUB読み込みスレッドを起動する
+     * バックグランドコンテンツ読み込みスレッドを起動する
      */
     public static void loadEpubFile(Fragment fragment, int shelfType, Activity activity) {
         new CallEpubLoad(fragment, shelfType, activity);
     }
 
     /**
-     * 指定パスから、EPUBファイルを探す
+     * 指定パスから、ファイルを探す
      * 
-     * @param path 探すパス
-     * @return　EPUBファイル名リスト
+     * @param fileDir 探すパス
+     * @param ext 対応するコンテンツの拡張子
+     * @return　ファイル名リスト
      */
-    public static String[] getEpubFileName(File fileDir) {
-        String[] epubFileNameList = fileDir.list(new FilenameFilter() {
+    public static String[] getFileName(File fileDir, final String ext) {
+        String[] fileNameList = fileDir.list(new FilenameFilter() {
 
             @Override
             public boolean accept(File dir, String filename) {
-                return (filename != null && filename.endsWith(EXTENSION_EPUB));
+                return (filename != null && filename.endsWith(ext));
             }
         });
-        return epubFileNameList;
-    }
-
-    // TODO
-    public static String[] getZipFileName(File fileDir) {
-        String[] zipFileNameList = fileDir.list(new FilenameFilter() {
-
-            @Override
-            public boolean accept(File dir, String filename) {
-                return (filename != null && filename.endsWith(EXTENSION_ZIP));
-            }
-        });
-        return zipFileNameList;
+        return fileNameList;
     }
 
     /**
-     * 指定パスにEPUBファイルの個数
+     * 指定パスから、ファイル総数を取得
      * 
-     * @return
+     * @param fileDir 探すパス
+     * @return　ファイル総数
      */
-    public static int getEpubFileCount(File fileDir) {
-        String[] epubFileNameList = getEpubFileName(fileDir);
-        if (epubFileNameList == null) {
-            return 0;
-        } else {
-            return epubFileNameList.length;
-        }
-    }
+    public static int getTotalFileCount(File fileDir) {
+        String[] fileNameList = fileDir.list(new FilenameFilter() {
 
-    public static int getZipFileCount(File fileDir) {
-        String[] zipFileNameList = getZipFileName(fileDir);
-        if (zipFileNameList != null) {
-            return zipFileNameList.length;
-        }
-        return 0;
+            @Override
+            public boolean accept(File dir, String filename) {
+                return (filename != null && isExtAcceptable(filename, EXTENSION_ACCEPTABLE));
+            }
+        });
+        return fileNameList.length;
     }
 
     /**
@@ -88,8 +75,17 @@ public class ContentManager {
             return false;
         }
         int epubFileCount = mEpubFileNameList.length;
-        int currentEpubFileCount = getEpubFileName(EXTERNAL_STORAGE_DIRECTORY).length;
+        int currentEpubFileCount = getFileName(EXTERNAL_STORAGE_DIRECTORY, this.EXTENSION_EPUB).length;
         return epubFileCount != currentEpubFileCount;
+    }
+
+    private static boolean isExtAcceptable(String str, String[] exts) {
+        for (String ext : exts) {
+            if (str != null && str.endsWith(ext)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

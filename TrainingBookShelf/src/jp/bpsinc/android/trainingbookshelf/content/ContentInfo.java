@@ -15,6 +15,9 @@ public class ContentInfo {
 
     public static final int CONTENT_TYPE_EPUB = -1;
     public static final int CONTENT_TYPE_ZIP = -2;
+    public static final int[] CONTENT_TYPES = {
+            CONTENT_TYPE_EPUB, CONTENT_TYPE_ZIP
+    };
 
     public ContentInfo(String uid, String title, String author, String epubPath, int type) {
         this.mUid = uid;
